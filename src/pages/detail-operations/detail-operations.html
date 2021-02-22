@@ -1,0 +1,29 @@
+<!--
+  Generated template for the DetailOperationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     {{produitDetail}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-divider color="dark">
+Détail -> {{produitDetail}}
+  </ion-item-divider>
+  <ion-list>
+      <ion-item *ngFor="let detail of listDetails" >
+          <h4>{{detail.action}} : {{detail.retrait}} Unités</h4>
+          <p color="secondary">{{detail.libelle}} </p>
+          <p color="secondary">{{detail.date}} </p>
+          <p color="secondary">Quantité Restante : {{detail.solde}} </p>
+          <p color="secondary">Signer Par : {{detail.user}} </p>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

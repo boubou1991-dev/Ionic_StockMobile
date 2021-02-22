@@ -1,0 +1,7 @@
+{
+  "name": "stockion",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

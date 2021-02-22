@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons>
+       <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+       </button>
+    </ion-buttons>
+    <ion-title>Boub's Market</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+<button (click)="showDetails(article)" ion-item *ngFor="let article of Articles">
+<ion-thumbnail item-start>
+   <img [src]="article.pictures[0]" imageViewer>
+<!--   <img [src]="article.pictures[0]" #picture (click)="showImage(picture,$event)"> -->
+
+</ion-thumbnail>
+<h3>{{article.title}}</h3>
+<p>{{article.description}}</p>
+<p>{{article.price | currency}}</p>
+<p>
+  <span *ngIf="article.averageStar>=1">
+    <ion-icon  class="iconYellow" name="star"></ion-icon>
+  </span>
+  <span *ngIf="article.averageStar>=2">
+    <ion-icon class="iconYellow" name="star"></ion-icon>
+  </span>
+  <span *ngIf="article.averageStar>=3">
+<ion-icon class="iconYellow" name="star"></ion-icon>    
+  </span>
+  <span *ngIf="article.averageStar>=4">
+    <ion-icon class="iconYellow" name="star"></ion-icon>
+    </span>
+    <span *ngIf="article.averageStar>=5">
+        <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+</p>
+</button>
+</ion-list>
+
+  <!--
+  <p>C est Ici qu on affcihe toutes les articles</p>
+<ul *ngFor="let article of Articles">
+  <li (click)="showDetails(article)">{{article.nom}} - {{article.prix}} Franc CFA</li>
+</ul>
+-->
+<!-- -
+<ion-list>
+  <button ion-item *ngFor='let article of Articles' (click)="showDetails(article)">{{article.nom}} - {{article.prix}}</button>
+</ion-list>
+<button ion-button (click)="showClassicAlert()">Classic Alert</button>
+<button ion-button (click)="showIonicAlert()">IONIC Alert</button><br>
+
+<button ion-button (click)="shwoAction()">Ionic Action</button>
+
+<!--<button ion-button (click)="showDetails()">Details Page</button>-->
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col offset-1 col-10>
+      <button (click)="showCreatePage()" ion-button round large>
+        <ion-icon name="camera" ></ion-icon>&nbsp;
+          Vendre vos biens
+      </button>
+    </ion-col>
+  </ion-row>
+  <!--  <p class="monFooter">Je suis le pied de la Page...</p> -->
+</ion-footer>

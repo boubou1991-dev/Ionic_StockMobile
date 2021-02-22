@@ -1,0 +1,85 @@
+
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-buttons>
+      <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+      </button>
+   </ion-buttons>
+    <ion-title>Produit</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Tab1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content fullscreen>
+  
+    <ion-item-divider color="dark">
+        <ion-icon name="build" large></ion-icon>
+        Nouveau Produit
+      </ion-item-divider>
+
+  <ion-list>
+    <ion-item> 
+      <ion-label floating>Nom Produit</ion-label>
+      <ion-input type="text" [(ngModel)]="monProduit.nomProduit"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>categorie</ion-label>
+        <ion-select [(ngModel)]="monProduit.categorie">
+          <ion-option [value]="cat.nomCategorie" *ngFor="let cat of categories">
+         {{cat.nomCategorie}}
+         </ion-option>
+        </ion-select>
+    </ion-item>
+
+<ion-item>
+  <ion-label floationg>Quantité</ion-label>
+  <ion-input type="number" [(ngModel)]="monProduit.quantite"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position>Date</ion-label>
+  <!--   <ion-input type="date" [(ngModel)]="monProduit.dateInsertion"></ion-input> -->
+<ion-datetime [(ngModel)]="monProduit.dateInsertion" (click)="SelectDate()" type="text"></ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label floating>Responsable</ion-label>
+  <ion-input type="text" [(ngModel)]="monProduit.responsable"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label floating>Motif</ion-label>
+  <ion-textarea type="text" [(ngModel)]="monProduit.motif"></ion-textarea>
+</ion-item>
+
+<button ion-button block (click)="createProduct()">Nouveau</button>
+     </ion-list>
+
+     <page-jx-alerte></page-jx-alerte>
+
+  <!--
+  <ion-list>
+    <button (click)="showMessage(site)" ion-item *ngFor="let site of Sites">
+      
+<h3>{{site.tank_id}}</h3>
+<p>Niveau Carburant:{{site.gas_level}} %</p>
+<p>Transmission:{{site.tstamp}}</p>
+<p>Autonomie:{{site.bat_level}} V</p>
+    </button>
+  
+  </ion-list>
+ -->
+</ion-content>

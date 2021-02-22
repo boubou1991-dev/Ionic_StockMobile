@@ -1,0 +1,57 @@
+<!--
+  Generated template for the JxDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Produits</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-divider color="dark">
+    <ion-icon name="build" large></ion-icon>
+    Liste des Produits
+<ion-buttons end>
+  <button ion-button outline>
+    <ion-icon name="send" (click)="sendOperation()"></ion-icon>
+    OPS
+  </button>
+</ion-buttons>
+   
+
+  </ion-item-divider>
+   <ion-toolbar>
+     <ion-searchbar (ionInput)=" FilterJsonData($event)"></ion-searchbar>
+   </ion-toolbar>
+  <!--
+
+      <ion-list>
+    <button ion-item *ngFor="let info of listProduct">
+      {{info.nomProduit}}
+    </button>
+  </ion-list>
+
+   -->
+  <ion-list>
+     <!--
+    <ion-item *ngFor="let item of jsonData">
+  {{item.name}}
+    </ion-item>
+      -->
+     
+    <button ion-item *ngFor="let produit of listProduct"  (click)="viewDetails(produit.nomProduit)">
+      
+        <h4>{{produit.nomProduit}}</h4>
+        <p>{{produit.Type}}</p>
+        <ion-note item-end>{{produit.quantite}}</ion-note>
+      
+    </button>
+      
+  </ion-list>
+
+
+
+</ion-content>
